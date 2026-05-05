@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tenor Fixer</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      text-align: center;
+      width: 500px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 15px;
+      word-break: break-all;
+      color: #00ff88;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Tenor Link Fixer</h2>
+    <input id="input" placeholder="Paste broken Tenor link here">
+    <button onclick="convert()">Convert</button>
+    <div class="output" id="output"></div>
+  </div>
+
+  <script>
+    function convert() {
+      let url = document.getElementById("input").value;
+
+      let fixed = url
+        .replace("media1.tenor.com/m/", "media.tenor.com/")
+        .replace("media1.tenor.com/", "media.tenor.com/")
+        .replace("/m/", "/");
+
+      document.getElementById("output").innerText = fixed;
+    }
+  </script>
+</body>
+</html>
